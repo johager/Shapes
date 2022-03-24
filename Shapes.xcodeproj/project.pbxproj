@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F83206DB27ED0EED00A230CC /* UIView+add.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83206DA27ED0EED00A230CC /* UIView+add.swift */; };
 		F83206DD27ED11F100A230CC /* ShapeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83206DC27ED11F100A230CC /* ShapeCell.swift */; };
 		F8A0896327ECDE4600C22CB6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A0896227ECDE4600C22CB6 /* AppDelegate.swift */; };
 		F8A0896527ECDE4600C22CB6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A0896427ECDE4600C22CB6 /* SceneDelegate.swift */; };
@@ -18,12 +17,9 @@
 		F8A0897E27ECDF1900C22CB6 /* ShapeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A0897D27ECDF1900C22CB6 /* ShapeType.swift */; };
 		F8A0898027ECE09900C22CB6 /* ShapeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A0897F27ECE09900C22CB6 /* ShapeController.swift */; };
 		F8A0898227ECE43E00C22CB6 /* ShapesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A0898127ECE43E00C22CB6 /* ShapesViewController.swift */; };
-		F8A0898627ECEC8300C22CB6 /* CircleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A0898527ECEC8300C22CB6 /* CircleCell.swift */; };
-		F8A0898827ECEC9900C22CB6 /* SidedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A0898727ECEC9900C22CB6 /* SidedCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		F83206DA27ED0EED00A230CC /* UIView+add.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+add.swift"; sourceTree = "<group>"; };
 		F83206DC27ED11F100A230CC /* ShapeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeCell.swift; sourceTree = "<group>"; };
 		F8A0895F27ECDE4600C22CB6 /* Shapes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shapes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8A0896227ECDE4600C22CB6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -36,8 +32,6 @@
 		F8A0897D27ECDF1900C22CB6 /* ShapeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeType.swift; sourceTree = "<group>"; };
 		F8A0897F27ECE09900C22CB6 /* ShapeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeController.swift; sourceTree = "<group>"; };
 		F8A0898127ECE43E00C22CB6 /* ShapesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapesViewController.swift; sourceTree = "<group>"; };
-		F8A0898527ECEC8300C22CB6 /* CircleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleCell.swift; sourceTree = "<group>"; };
-		F8A0898727ECEC9900C22CB6 /* SidedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidedCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,10 +122,7 @@
 		F8A0898427ECEC5C00C22CB6 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				F8A0898527ECEC8300C22CB6 /* CircleCell.swift */,
 				F83206DC27ED11F100A230CC /* ShapeCell.swift */,
-				F8A0898727ECEC9900C22CB6 /* SidedCell.swift */,
-				F83206DA27ED0EED00A230CC /* UIView+add.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -211,11 +202,8 @@
 				F8A0897E27ECDF1900C22CB6 /* ShapeType.swift in Sources */,
 				F8A0896527ECDE4600C22CB6 /* SceneDelegate.swift in Sources */,
 				F83206DD27ED11F100A230CC /* ShapeCell.swift in Sources */,
-				F8A0898827ECEC9900C22CB6 /* SidedCell.swift in Sources */,
 				F8A0897C27ECDEE900C22CB6 /* Shape.swift in Sources */,
-				F83206DB27ED0EED00A230CC /* UIView+add.swift in Sources */,
 				F8A0898227ECE43E00C22CB6 /* ShapesViewController.swift in Sources */,
-				F8A0898627ECEC8300C22CB6 /* CircleCell.swift in Sources */,
 				F8A0898027ECE09900C22CB6 /* ShapeController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -362,7 +350,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 37H8X6K6NN;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Shapes/Resources/Info.plist;
@@ -390,7 +378,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 37H8X6K6NN;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Shapes/Resources/Info.plist;

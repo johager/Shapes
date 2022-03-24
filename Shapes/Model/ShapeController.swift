@@ -15,7 +15,8 @@ class ShapeController {
     init() {
         shapes = [
             Shape(name: "Circle", shapeType: .circle, strokeColor: .black, strokeWidth: 4.0, fillColor: .red),
-            Shape(name: "Square", shapeType: .sided(4), strokeColor: .black, strokeWidth: 4.0, fillColor: .blue)
+            Shape(name: "Triangle", shapeType: .sided(3), strokeColor: .black, strokeWidth: 4.0, fillColor: .blue),
+            Shape(name: "Square", shapeType: .sided(4), strokeColor: .black, strokeWidth: 4.0, fillColor: .yellow)
         ]
     }
      

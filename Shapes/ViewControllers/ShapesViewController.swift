@@ -25,10 +25,7 @@ class ShapesViewController: UIViewController {
         return (self.view as! UICollectionView)
     }
     
-    struct CellIdentifier {
-        static let circle = "circleCell"
-        static let sided = "sidedCell"
-    }
+    let cellIdentifier = "shapeCell"
     
     // MARK: - Lifecycle
     
@@ -45,9 +42,7 @@ class ShapesViewController: UIViewController {
     // MARK: - View Methods
     
     func setUpViews() {
-        collectionView.register(CircleCell.self, forCellWithReuseIdentifier: CellIdentifier.circle)
-        collectionView.register(SidedCell.self, forCellWithReuseIdentifier: CellIdentifier.sided)
-        
+        collectionView.register(ShapeCell.self, forCellWithReuseIdentifier: cellIdentifier)
         collectionView.delegate = self
         collectionView.dataSource = self
     }
@@ -73,17 +68,9 @@ extension ShapesViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let shape = shapes[indexPath.row]
-        switch shape.shapeType {
-        case .circle:
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellIdentifier.circle, for: indexPath) as? CircleCell else { return UICollectionViewCell() }
-            cell.configure(with: shape, for: cellSize)
-            return cell
-        case .sided:
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CellIdentifier.sided, for: indexPath) as? SidedCell else { return UICollectionViewCell() }
-            cell.configure(with: shape, for: cellSize)
-            return cell
-        }
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellIdentifier, for: indexPath) as? ShapeCell else { return UICollectionViewCell() }
+        cell.configure(with: shapes[indexPath.row], for: cellSize)
+        return cell
     }
 }
 
