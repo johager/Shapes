@@ -7,23 +7,37 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F83206DB27ED0EED00A230CC /* UIView+add.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83206DA27ED0EED00A230CC /* UIView+add.swift */; };
+		F83206DD27ED11F100A230CC /* ShapeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83206DC27ED11F100A230CC /* ShapeCell.swift */; };
 		F8A0896327ECDE4600C22CB6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A0896227ECDE4600C22CB6 /* AppDelegate.swift */; };
 		F8A0896527ECDE4600C22CB6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A0896427ECDE4600C22CB6 /* SceneDelegate.swift */; };
-		F8A0896727ECDE4600C22CB6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A0896627ECDE4600C22CB6 /* ViewController.swift */; };
 		F8A0896A27ECDE4600C22CB6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8A0896827ECDE4600C22CB6 /* Main.storyboard */; };
 		F8A0896C27ECDE4700C22CB6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F8A0896B27ECDE4700C22CB6 /* Assets.xcassets */; };
 		F8A0896F27ECDE4700C22CB6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F8A0896D27ECDE4700C22CB6 /* LaunchScreen.storyboard */; };
+		F8A0897C27ECDEE900C22CB6 /* Shape.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A0897B27ECDEE900C22CB6 /* Shape.swift */; };
+		F8A0897E27ECDF1900C22CB6 /* ShapeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A0897D27ECDF1900C22CB6 /* ShapeType.swift */; };
+		F8A0898027ECE09900C22CB6 /* ShapeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A0897F27ECE09900C22CB6 /* ShapeController.swift */; };
+		F8A0898227ECE43E00C22CB6 /* ShapesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A0898127ECE43E00C22CB6 /* ShapesViewController.swift */; };
+		F8A0898627ECEC8300C22CB6 /* CircleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A0898527ECEC8300C22CB6 /* CircleCell.swift */; };
+		F8A0898827ECEC9900C22CB6 /* SidedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A0898727ECEC9900C22CB6 /* SidedCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F83206DA27ED0EED00A230CC /* UIView+add.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+add.swift"; sourceTree = "<group>"; };
+		F83206DC27ED11F100A230CC /* ShapeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeCell.swift; sourceTree = "<group>"; };
 		F8A0895F27ECDE4600C22CB6 /* Shapes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shapes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8A0896227ECDE4600C22CB6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F8A0896427ECDE4600C22CB6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F8A0896627ECDE4600C22CB6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F8A0896927ECDE4600C22CB6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F8A0896B27ECDE4700C22CB6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F8A0896E27ECDE4700C22CB6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F8A0897027ECDE4700C22CB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F8A0897B27ECDEE900C22CB6 /* Shape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shape.swift; sourceTree = "<group>"; };
+		F8A0897D27ECDF1900C22CB6 /* ShapeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeType.swift; sourceTree = "<group>"; };
+		F8A0897F27ECE09900C22CB6 /* ShapeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeController.swift; sourceTree = "<group>"; };
+		F8A0898127ECE43E00C22CB6 /* ShapesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapesViewController.swift; sourceTree = "<group>"; };
+		F8A0898527ECEC8300C22CB6 /* CircleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleCell.swift; sourceTree = "<group>"; };
+		F8A0898727ECEC9900C22CB6 /* SidedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidedCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +70,70 @@
 		F8A0896127ECDE4600C22CB6 /* Shapes */ = {
 			isa = PBXGroup;
 			children = (
-				F8A0896227ECDE4600C22CB6 /* AppDelegate.swift */,
-				F8A0896427ECDE4600C22CB6 /* SceneDelegate.swift */,
-				F8A0896627ECDE4600C22CB6 /* ViewController.swift */,
-				F8A0896827ECDE4600C22CB6 /* Main.storyboard */,
-				F8A0896B27ECDE4700C22CB6 /* Assets.xcassets */,
-				F8A0896D27ECDE4700C22CB6 /* LaunchScreen.storyboard */,
-				F8A0897027ECDE4700C22CB6 /* Info.plist */,
+				F8A0897827ECDE7D00C22CB6 /* MainDelegates */,
+				F8A0897927ECDEB500C22CB6 /* Model */,
+				F8A0898427ECEC5C00C22CB6 /* Views */,
+				F8A0897A27ECDECA00C22CB6 /* ViewControllers */,
+				F8A0897627ECDE5C00C22CB6 /* Storyboards */,
+				F8A0897727ECDE6C00C22CB6 /* Resources */,
 			);
 			path = Shapes;
+			sourceTree = "<group>";
+		};
+		F8A0897627ECDE5C00C22CB6 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				F8A0896827ECDE4600C22CB6 /* Main.storyboard */,
+				F8A0896D27ECDE4700C22CB6 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		F8A0897727ECDE6C00C22CB6 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F8A0896B27ECDE4700C22CB6 /* Assets.xcassets */,
+				F8A0897027ECDE4700C22CB6 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		F8A0897827ECDE7D00C22CB6 /* MainDelegates */ = {
+			isa = PBXGroup;
+			children = (
+				F8A0896227ECDE4600C22CB6 /* AppDelegate.swift */,
+				F8A0896427ECDE4600C22CB6 /* SceneDelegate.swift */,
+			);
+			path = MainDelegates;
+			sourceTree = "<group>";
+		};
+		F8A0897927ECDEB500C22CB6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F8A0897B27ECDEE900C22CB6 /* Shape.swift */,
+				F8A0897F27ECE09900C22CB6 /* ShapeController.swift */,
+				F8A0897D27ECDF1900C22CB6 /* ShapeType.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F8A0897A27ECDECA00C22CB6 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				F8A0898127ECE43E00C22CB6 /* ShapesViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		F8A0898427ECEC5C00C22CB6 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F8A0898527ECEC8300C22CB6 /* CircleCell.swift */,
+				F83206DC27ED11F100A230CC /* ShapeCell.swift */,
+				F8A0898727ECEC9900C22CB6 /* SidedCell.swift */,
+				F83206DA27ED0EED00A230CC /* UIView+add.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,9 +207,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F8A0896727ECDE4600C22CB6 /* ViewController.swift in Sources */,
 				F8A0896327ECDE4600C22CB6 /* AppDelegate.swift in Sources */,
+				F8A0897E27ECDF1900C22CB6 /* ShapeType.swift in Sources */,
 				F8A0896527ECDE4600C22CB6 /* SceneDelegate.swift in Sources */,
+				F83206DD27ED11F100A230CC /* ShapeCell.swift in Sources */,
+				F8A0898827ECEC9900C22CB6 /* SidedCell.swift in Sources */,
+				F8A0897C27ECDEE900C22CB6 /* Shape.swift in Sources */,
+				F83206DB27ED0EED00A230CC /* UIView+add.swift in Sources */,
+				F8A0898227ECE43E00C22CB6 /* ShapesViewController.swift in Sources */,
+				F8A0898627ECEC8300C22CB6 /* CircleCell.swift in Sources */,
+				F8A0898027ECE09900C22CB6 /* ShapeController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,7 +365,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 37H8X6K6NN;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Shapes/Info.plist;
+				INFOPLIST_FILE = Shapes/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -317,7 +393,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 37H8X6K6NN;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Shapes/Info.plist;
+				INFOPLIST_FILE = Shapes/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
