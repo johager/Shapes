@@ -27,6 +27,22 @@ class ShapeController {
         sort()
     }
     
+    func update(name: String, atIndex index: Int) {
+        shapes[index].update(name: name)
+    }
+    
+    func update(strokeColor: Color, atIndex index: Int) {
+        shapes[index].update(strokeColor: strokeColor)
+    }
+    
+    func update(strokeWidth: StrokeWidth, atIndex index: Int){
+        shapes[index].update(strokeWidth: strokeWidth)
+    }
+    
+    func update(fillColor: Color, atIndex index: Int) {
+        shapes[index].update(fillColor: fillColor)
+    }
+    
     // MARK: - Methods
     
     func sort() {

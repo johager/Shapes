@@ -22,4 +22,20 @@ class Shape {
         self.strokeWidth = strokeWidth
         self.fillColor = fillColor
     }
+    
+    func update(name: String) {
+        self.name = name
+    }
+    
+    func update(strokeColor: Color) {
+        self.strokeColor = strokeColor
+    }
+    
+    func update(strokeWidth: StrokeWidth) {
+        self.strokeWidth = strokeWidth
+    }
+    
+    func update(fillColor: Color) {
+        self.fillColor = fillColor
+    }
 }

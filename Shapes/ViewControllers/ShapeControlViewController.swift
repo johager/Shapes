@@ -8,6 +8,7 @@
 import UIKit
 
 protocol ShapeControlViewControllerDelegate: AnyObject {
+    func shapeName(is name: String)
     func strokeColorChanged(to color: Color)
     func strokeWidthChanged(to width: StrokeWidth)
     func fillColorChanged(to color: Color)
@@ -26,6 +27,8 @@ class ShapeControlViewController: UIViewController {
     
     // MARK: - Properties
     
+    var shape: Shape!
+    
     weak var delegate: ShapeControlViewControllerDelegate?
     
     private var strokeColorMenu: UIMenu!
@@ -43,9 +46,13 @@ class ShapeControlViewController: UIViewController {
     
     func setUpViews() {
         
+        // shapeName
+        
+        shapeNameTextField.text = shape.name
+        
         // strokeColor
         
-        let strokeColorMenuItems = colorMenuItems(withHandler: handleStrokeColorMenu)
+        let strokeColorMenuItems = colorMenuItems(selected: shape.strokeColor, handler: handleStrokeColorMenu(_:))
         strokeColorMenu = UIMenu(title: "Stroke Color", image: nil, identifier: nil, options: [], children: strokeColorMenuItems)
         strokeColorButton.menu = strokeColorMenu
         strokeColorButton.changesSelectionAsPrimaryAction = true
@@ -53,7 +60,7 @@ class ShapeControlViewController: UIViewController {
         
         // strokeWidth
         
-        let strokeWidthMenuItems = strokeWidthMenuItems(withHandler: handleStrokeWidthMenu)
+        let strokeWidthMenuItems = strokeWidthMenuItems(selected: shape.strokeWidth, withHandler: handleStrokeWidthMenu(_:))
         strokeWidthMenu = UIMenu(title: "Stroke Width", image: nil, identifier: nil, options: [], children: strokeWidthMenuItems)
         strokeWidthButton.menu = strokeWidthMenu
         strokeWidthButton.changesSelectionAsPrimaryAction = true
@@ -61,40 +68,55 @@ class ShapeControlViewController: UIViewController {
         
         // fillColor
         
-        let fillColorMenuItems = colorMenuItems(withHandler: handleFillColorMenu)
+        let fillColorMenuItems = colorMenuItems(selected: shape.fillColor, handler: handleFillColorMenu(_:))
         fillColorMenu = UIMenu(title: "Fill Color", image: nil, identifier: nil, options: [], children: fillColorMenuItems)
         fillColorButton.menu = fillColorMenu
         fillColorButton.changesSelectionAsPrimaryAction = true
         fillColorButton.showsMenuAsPrimaryAction = true
     }
     
-    func colorMenuItems(withHandler handler: @escaping (UIAction) -> Void) -> [UIAction] {
+    func colorMenuItems(selected colorSelected: Color, handler: @escaping (UIAction) -> Void) -> [UIAction] {
         var menuItems = [UIAction]()
         for color in Color.allCases {
-            menuItems.append(UIAction(title: color.description, image: nil, handler: handler))
+            if color == colorSelected {
+                menuItems.append(UIAction(title: color.description, image: nil, state: .on, handler: handler))
+            } else {
+                menuItems.append(UIAction(title: color.description, image: nil, handler: handler))
+            }
         }
         return menuItems
     }
     
-    func strokeWidthMenuItems(withHandler handler: @escaping (UIAction) -> Void) -> [UIAction] {
+    func strokeWidthMenuItems(selected strokeWidthSelected: StrokeWidth, withHandler handler: @escaping (UIAction) -> Void) -> [UIAction] {
         var menuItems = [UIAction]()
         for strokeWidth in StrokeWidth.allCases {
-            menuItems.append(UIAction(title: strokeWidth.description, image: nil, handler: handler))
+            if strokeWidth == strokeWidthSelected {
+                menuItems.append(UIAction(title: strokeWidth.description, image: nil, state: .on, handler: handler))
+            } else {
+                menuItems.append(UIAction(title: strokeWidth.description, image: nil, handler: handler))
+            }
         }
         return menuItems
     }
     
     // MARK: - Actions
 
-    let handleStrokeColorMenu = { (action: UIAction) in
-        print("handleStrokeColorMenu - title: \(action.title)")
+    @objc func handleStrokeColorMenu(_ action: UIAction) {
+        delegate?.strokeColorChanged(to: Color(rawValue: action.title)!)
     }
     
-    let handleStrokeWidthMenu = { (action: UIAction) in
-        print("handleStrokeWidthMenu - title: \(action.title)")
+    @objc func handleStrokeWidthMenu(_ action: UIAction) {
+        delegate?.strokeWidthChanged(to: StrokeWidth(rawValue: Int(action.title)!)!)
     }
     
-    let handleFillColorMenu = { (action: UIAction) in
-        print("handleFillColorMenu - title: \(action.title)")
+    @objc func handleFillColorMenu(_ action: UIAction) {
+        delegate?.fillColorChanged(to: Color(rawValue: action.title)!)
+    }
+    
+    @IBAction func doneButtonTapped(_ sender: Any) {
+        if let name = shapeNameTextField?.text {
+            delegate?.shapeName(is: name)
+        }
+        dismiss(animated: true)
     }
 }

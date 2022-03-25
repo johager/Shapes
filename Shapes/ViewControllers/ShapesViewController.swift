@@ -17,6 +17,8 @@ class ShapesViewController: UIViewController {
         return shapeController.shapes
     }
     
+    private var shapeIndexSelected: Int?
+    
     private let cellSize = CGSize(width: 128, height: 128)
     
     private var collectionViewLayout: UICollectionViewFlowLayout!
@@ -42,9 +44,9 @@ class ShapesViewController: UIViewController {
 //    override func viewDidAppear(_ animated: Bool) {
 //        super.viewDidAppear(animated)
 //        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        let vc = storyboard.instantiateViewController(identifier: "ShapeControlViewController")
-//        
-//        show(vc, sender: self)
+//        guard let shapeControlViewController = storyboard.instantiateViewController(identifier: "ShapeControlViewController") as? ShapeControlViewController else { return }
+//        shapeControlViewController.shape = shapes[0]
+//        show(shapeControlViewController, sender: self)
 //    }
     
     // MARK: - View Methods
@@ -56,7 +58,7 @@ class ShapesViewController: UIViewController {
     }
     
     func updateViews() {
-        
+        collectionView.reloadData()
     }
 
     // MARK: - Navigation
@@ -87,7 +89,12 @@ extension ShapesViewController: UICollectionViewDataSource {
 extension ShapesViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        // TODO: show detail VC
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let shapeControlViewController = storyboard.instantiateViewController(identifier: "ShapeControlViewController") as? ShapeControlViewController else { return }
+        shapeIndexSelected = indexPath.row
+        shapeControlViewController.shape = shapes[indexPath.row]
+        shapeControlViewController.delegate = self
+        show(shapeControlViewController, sender: self)
     }
 }
 
@@ -109,5 +116,35 @@ extension ShapesViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return CGFloat(8)
+    }
+}
+
+// MARK: - ShapeControlViewControllerDelegate
+
+extension ShapesViewController: ShapeControlViewControllerDelegate {
+    
+    func shapeName(is name: String) {
+        guard let shapeIndexSelected = shapeIndexSelected else { return }
+        guard name != shapes[shapeIndexSelected].name else { return }
+        shapeController.update(name: name, atIndex: shapeIndexSelected)
+        updateViews()
+    }
+    
+    func strokeColorChanged(to color: Color) {
+        guard let shapeIndexSelected = shapeIndexSelected else { return }
+        shapeController.update(strokeColor: color, atIndex: shapeIndexSelected)
+        updateViews()
+    }
+    
+    func strokeWidthChanged(to strokeWidth: StrokeWidth) {
+        guard let shapeIndexSelected = shapeIndexSelected else { return }
+        shapeController.update(strokeWidth: strokeWidth, atIndex: shapeIndexSelected)
+        updateViews()
+    }
+    
+    func fillColorChanged(to color: Color) {
+        guard let shapeIndexSelected = shapeIndexSelected else { return }
+        shapeController.update(fillColor: color, atIndex: shapeIndexSelected)
+        updateViews()
     }
 }

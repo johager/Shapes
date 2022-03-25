@@ -12,6 +12,8 @@ class ShapeCell: UICollectionViewCell {
     var size: CGSize!
     let margin: CGFloat = 16
     
+    var shapeLayer: CAShapeLayer!
+    
     // MARK: - View Methods
     
     func configure(with shape: Shape, for cellSize: CGSize) {
@@ -22,19 +24,16 @@ class ShapeCell: UICollectionViewCell {
     func setUpView(for cellSize: CGSize) {
         guard size == nil else { return }
         size = CGSize(width: cellSize.width - 2 * margin, height: cellSize.height - 2 * margin)
+        shapeLayer = CAShapeLayer()
+        contentView.layer.addSublayer(shapeLayer)
     }
     
-    func createShape(_ shape: Shape, for cellSize: CGSize) {
-        let path = path(for: shape)
-        
-        let shapeLayer = CAShapeLayer()
-        shapeLayer.path = path.cgPath
+    func createShape(_ shape: Shape, for cellSize: CGSize) {        
+        shapeLayer.path = path(for: shape).cgPath
         shapeLayer.fillColor = shape.fillColor.uiColor.cgColor
         shapeLayer.lineWidth = shape.strokeWidth.cgFloat
         shapeLayer.strokeColor = shape.strokeColor.uiColor.cgColor
         shapeLayer.lineCap = .square
-        
-        contentView.layer.addSublayer(shapeLayer)
     }
     
     func path(for shape: Shape) -> UIBezierPath {
