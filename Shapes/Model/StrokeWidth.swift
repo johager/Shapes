@@ -15,13 +15,7 @@ enum StrokeWidth: Int, CaseIterable, CustomStringConvertible {
     case five = 5
     
     var cgFloat: CGFloat {
-        switch self {
-        case .one: return 1
-        case .two: return 2
-        case .three: return 3
-        case .four: return 4
-        case .five: return 5
-        }
+        return CGFloat(rawValue)
     }
     
     var description: String {
