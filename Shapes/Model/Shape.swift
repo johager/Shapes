@@ -11,11 +11,11 @@ class Shape {
     
     var name: String
     var shapeType: ShapeType
-    var strokeColor: UIColor
-    var strokeWidth: CGFloat
-    var fillColor: UIColor
+    var strokeColor: Color
+    var strokeWidth: StrokeWidth
+    var fillColor: Color
     
-    init(name: String, shapeType: ShapeType, strokeColor: UIColor = .black, strokeWidth: CGFloat = 4, fillColor: UIColor = .white) {
+    init(name: String, shapeType: ShapeType, strokeColor: Color = .black, strokeWidth: StrokeWidth = .four, fillColor: Color = .black) {
         self.name = name
         self.shapeType = shapeType
         self.strokeColor = strokeColor

@@ -14,15 +14,15 @@ class ShapeController {
     // temp default data
     init() {
         shapes = [
-            Shape(name: "Circle", shapeType: .circle, strokeColor: .black, strokeWidth: 4.0, fillColor: .red),
-            Shape(name: "Triangle", shapeType: .sided(3), strokeColor: .black, strokeWidth: 4.0, fillColor: .blue),
-            Shape(name: "Square", shapeType: .sided(4), strokeColor: .black, strokeWidth: 4.0, fillColor: .yellow)
+            Shape(name: "Circle", shapeType: .circle, strokeColor: .black, strokeWidth: .four, fillColor: .red),
+            Shape(name: "Triangle", shapeType: .sided(3), strokeColor: .black, strokeWidth: .four, fillColor: .blue),
+            Shape(name: "Square", shapeType: .sided(4), strokeColor: .black, strokeWidth: .four, fillColor: .yellow)
         ]
     }
      
     // MARK: - CRUD
     
-    func createShape(name: String, shapeType: ShapeType, strokeColor: UIColor, strokeWidth: CGFloat, fillColor: UIColor) {
+    func createShape(name: String, shapeType: ShapeType, strokeColor: Color, strokeWidth: StrokeWidth, fillColor: Color) {
         shapes.append(Shape(name: name, shapeType: shapeType, strokeColor: strokeColor, strokeWidth: strokeWidth, fillColor: fillColor))
         sort()
     }

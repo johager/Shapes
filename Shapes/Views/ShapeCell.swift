@@ -29,9 +29,9 @@ class ShapeCell: UICollectionViewCell {
         
         let shapeLayer = CAShapeLayer()
         shapeLayer.path = path.cgPath
-        shapeLayer.fillColor = shape.fillColor.cgColor
-        shapeLayer.lineWidth = shape.strokeWidth
-        shapeLayer.strokeColor = shape.strokeColor.cgColor
+        shapeLayer.fillColor = shape.fillColor.uiColor.cgColor
+        shapeLayer.lineWidth = shape.strokeWidth.cgFloat
+        shapeLayer.strokeColor = shape.strokeColor.uiColor.cgColor
         shapeLayer.lineCap = .square
         
         contentView.layer.addSublayer(shapeLayer)
