@@ -14,14 +14,14 @@ class ShapeController {
     // temp default data
     init() {
         shapes = [
-            Shape(name: "Circle", shapeType: .circle, strokeColor: .black, strokeWidth: .three, fillColor: .red),
-            Shape(name: "Triangle", shapeType: .sided(3), strokeColor: .black, strokeWidth: .three, fillColor: .blue),
-            Shape(name: "Square", shapeType: .sided(4), strokeColor: .black, strokeWidth: .three, fillColor: .yellow),
+            Shape(name: "Triangle", shapeType: .sided(3), strokeColor: .black, strokeWidth: .three, fillColor: .red),
+            Shape(name: "Square", shapeType: .sided(4), strokeColor: .black, strokeWidth: .three, fillColor: .teal),
             Shape(name: "Pentagon", shapeType: .sided(5), strokeColor: .black, strokeWidth: .three, fillColor: .green),
-            Shape(name: "Hexagon", shapeType: .sided(6), strokeColor: .black, strokeWidth: .three, fillColor: .cyan),
-            Shape(name: "Septagon", shapeType: .sided(7), strokeColor: .black, strokeWidth: .three, fillColor: .teal),
-            Shape(name: "Octagon", shapeType: .sided(8), strokeColor: .black, strokeWidth: .three, fillColor: .mint),
-            Shape(name: "Nonagon", shapeType: .sided(9), strokeColor: .black, strokeWidth: .three, fillColor: .gray)
+            Shape(name: "Hexagon", shapeType: .sided(6), strokeColor: .black, strokeWidth: .three, fillColor: .mint),
+            Shape(name: "Septagon", shapeType: .sided(7), strokeColor: .black, strokeWidth: .three, fillColor: .blue),
+            Shape(name: "Octagon", shapeType: .sided(8), strokeColor: .black, strokeWidth: .three, fillColor: .cyan),
+            Shape(name: "Nonagon", shapeType: .sided(9), strokeColor: .black, strokeWidth: .three, fillColor: .yellow),
+            Shape(name: "Circle", shapeType: .circle, strokeColor: .black, strokeWidth: .three, fillColor: .gray),
         ]
     }
      

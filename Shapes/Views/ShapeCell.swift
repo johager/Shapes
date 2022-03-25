@@ -77,6 +77,23 @@ class ShapeCell: UICollectionViewCell {
         let transform = CGAffineTransform(translationX: margin + size.width / 2, y: margin + size.height / 2 + unusedSpace)
         path.apply(transform)
         
+        // rotate even-sided shapes
+        if numberOfSides % 2 == 0 {
+            // shift center to (0,0)
+            let dx = -(margin + size.width / 2)
+            let dy = -(margin + size.height / 2)
+            var transform = CGAffineTransform(translationX: dx, y: dy)
+            path.apply(transform)
+            
+            // rotate
+            transform = CGAffineTransform(rotationAngle: angleAdjustment / 2)
+            path.apply(transform)
+            
+            // put center back
+            transform = CGAffineTransform(translationX: -dx, y: -dy)
+            path.apply(transform)
+        }
+        
         return path
     }
 }
