@@ -41,14 +41,6 @@ class ShapesViewController: UIViewController {
         setUpViews()
     }
     
-//    override func viewDidAppear(_ animated: Bool) {
-//        super.viewDidAppear(animated)
-//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        guard let shapeControlViewController = storyboard.instantiateViewController(identifier: "ShapeControlViewController") as? ShapeControlViewController else { return }
-//        shapeControlViewController.shape = shapes[0]
-//        show(shapeControlViewController, sender: self)
-//    }
-    
     // MARK: - View Methods
     
     func setUpViews() {
@@ -59,13 +51,6 @@ class ShapesViewController: UIViewController {
     
     func updateViews() {
         collectionView.reloadData()
-    }
-
-    // MARK: - Navigation
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
     }
 }
 
@@ -107,15 +92,15 @@ extension ShapesViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8)
+        return UIEdgeInsets(top: 32, left: 32, bottom: 32, right: 32)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return CGFloat(8)
+        return CGFloat(32)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return CGFloat(8)
+        return CGFloat(32)
     }
 }
 
@@ -125,26 +110,33 @@ extension ShapesViewController: ShapeControlViewControllerDelegate {
     
     func shapeName(is name: String) {
         guard let shapeIndexSelected = shapeIndexSelected else { return }
-        guard name != shapes[shapeIndexSelected].name else { return }
-        shapeController.update(name: name, atIndex: shapeIndexSelected)
-        updateViews()
+        
+        if shapeController.didUpdate(name: name, atIndex: shapeIndexSelected) {
+            updateViews()
+        }
     }
     
     func strokeColorChanged(to color: Color) {
         guard let shapeIndexSelected = shapeIndexSelected else { return }
-        shapeController.update(strokeColor: color, atIndex: shapeIndexSelected)
-        updateViews()
+        
+        if shapeController.didUpdate(strokeColor: color, atIndex: shapeIndexSelected) {
+            updateViews()
+        }
     }
     
     func strokeWidthChanged(to strokeWidth: StrokeWidth) {
         guard let shapeIndexSelected = shapeIndexSelected else { return }
-        shapeController.update(strokeWidth: strokeWidth, atIndex: shapeIndexSelected)
-        updateViews()
+        
+        if shapeController.didUpdate(strokeWidth: strokeWidth, atIndex: shapeIndexSelected) {
+            updateViews()
+        }
     }
     
     func fillColorChanged(to color: Color) {
         guard let shapeIndexSelected = shapeIndexSelected else { return }
-        shapeController.update(fillColor: color, atIndex: shapeIndexSelected)
-        updateViews()
+        
+        if shapeController.didUpdate(fillColor: color, atIndex: shapeIndexSelected) {
+            updateViews()
+        }
     }
 }

@@ -11,7 +11,11 @@ enum Color: String, CaseIterable, CustomStringConvertible {
     case red = "Red"
     case green = "Green"
     case blue = "Blue"
+    case cyan = "Cyan"
     case yellow = "Yellow"
+    case teal = "Teal"
+    case mint = "Mint"
+    case gray = "Gray"
     case black = "Black"
     
     var uiColor: UIColor {
@@ -19,7 +23,11 @@ enum Color: String, CaseIterable, CustomStringConvertible {
         case .red: return .systemRed
         case .green: return .systemGreen
         case .blue: return .systemBlue
+        case .cyan: return .systemCyan
         case .yellow: return .systemYellow
+        case .teal: return .systemTeal
+        case .mint: return .systemMint
+        case .gray: return .systemGray
         case .black: return .black
         }
     }

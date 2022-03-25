@@ -31,10 +31,6 @@ class ShapeControlViewController: UIViewController {
     
     weak var delegate: ShapeControlViewControllerDelegate?
     
-    private var strokeColorMenu: UIMenu!
-    private var strokeWidthMenu: UIMenu!
-    private var fillColorMenu: UIMenu!
-    
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
@@ -53,15 +49,15 @@ class ShapeControlViewController: UIViewController {
         // strokeColor
         
         let strokeColorMenuItems = colorMenuItems(selected: shape.strokeColor, handler: handleStrokeColorMenu(_:))
-        strokeColorMenu = UIMenu(title: "Stroke Color", image: nil, identifier: nil, options: [], children: strokeColorMenuItems)
+        let strokeColorMenu = UIMenu(title: "Stroke Color", image: nil, identifier: nil, options: [], children: strokeColorMenuItems)
         strokeColorButton.menu = strokeColorMenu
         strokeColorButton.changesSelectionAsPrimaryAction = true
         strokeColorButton.showsMenuAsPrimaryAction = true
         
         // strokeWidth
         
-        let strokeWidthMenuItems = strokeWidthMenuItems(selected: shape.strokeWidth, withHandler: handleStrokeWidthMenu(_:))
-        strokeWidthMenu = UIMenu(title: "Stroke Width", image: nil, identifier: nil, options: [], children: strokeWidthMenuItems)
+        let strokeWidthMenuItems = strokeWidthMenuItems(selected: shape.strokeWidth, handler: handleStrokeWidthMenu(_:))
+        let strokeWidthMenu = UIMenu(title: "Stroke Width", image: nil, identifier: nil, options: [], children: strokeWidthMenuItems)
         strokeWidthButton.menu = strokeWidthMenu
         strokeWidthButton.changesSelectionAsPrimaryAction = true
         strokeWidthButton.showsMenuAsPrimaryAction = true
@@ -69,7 +65,7 @@ class ShapeControlViewController: UIViewController {
         // fillColor
         
         let fillColorMenuItems = colorMenuItems(selected: shape.fillColor, handler: handleFillColorMenu(_:))
-        fillColorMenu = UIMenu(title: "Fill Color", image: nil, identifier: nil, options: [], children: fillColorMenuItems)
+        let fillColorMenu = UIMenu(title: "Fill Color", image: nil, identifier: nil, options: [], children: fillColorMenuItems)
         fillColorButton.menu = fillColorMenu
         fillColorButton.changesSelectionAsPrimaryAction = true
         fillColorButton.showsMenuAsPrimaryAction = true
@@ -87,7 +83,7 @@ class ShapeControlViewController: UIViewController {
         return menuItems
     }
     
-    func strokeWidthMenuItems(selected strokeWidthSelected: StrokeWidth, withHandler handler: @escaping (UIAction) -> Void) -> [UIAction] {
+    func strokeWidthMenuItems(selected strokeWidthSelected: StrokeWidth, handler: @escaping (UIAction) -> Void) -> [UIAction] {
         var menuItems = [UIAction]()
         for strokeWidth in StrokeWidth.allCases {
             if strokeWidth == strokeWidthSelected {

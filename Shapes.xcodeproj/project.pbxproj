@@ -8,10 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		F83206DD27ED11F100A230CC /* ShapeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83206DC27ED11F100A230CC /* ShapeCell.swift */; };
-		F83206E327ED258000A230CC /* ShapeControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83206E227ED258000A230CC /* ShapeControlView.swift */; };
-		F83206E627ED2A9200A230CC /* AAPinType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83206E527ED2A9200A230CC /* AAPinType.swift */; };
-		F83206E827ED2AAA00A230CC /* UIView+add.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83206E727ED2AAA00A230CC /* UIView+add.swift */; };
-		F83206EA27ED2AD400A230CC /* UIView+constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83206E927ED2AD400A230CC /* UIView+constraints.swift */; };
 		F83206EC27ED2BA200A230CC /* ShapeControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83206EB27ED2BA200A230CC /* ShapeControlViewController.swift */; };
 		F83206EE27ED383A00A230CC /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83206ED27ED383A00A230CC /* Color.swift */; };
 		F83206F027ED3DA600A230CC /* StrokeWidth.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83206EF27ED3DA600A230CC /* StrokeWidth.swift */; };
@@ -28,10 +24,6 @@
 
 /* Begin PBXFileReference section */
 		F83206DC27ED11F100A230CC /* ShapeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeCell.swift; sourceTree = "<group>"; };
-		F83206E227ED258000A230CC /* ShapeControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeControlView.swift; sourceTree = "<group>"; };
-		F83206E527ED2A9200A230CC /* AAPinType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AAPinType.swift; sourceTree = "<group>"; };
-		F83206E727ED2AAA00A230CC /* UIView+add.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+add.swift"; sourceTree = "<group>"; };
-		F83206E927ED2AD400A230CC /* UIView+constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+constraints.swift"; sourceTree = "<group>"; };
 		F83206EB27ED2BA200A230CC /* ShapeControlViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeControlViewController.swift; sourceTree = "<group>"; };
 		F83206ED27ED383A00A230CC /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		F83206EF27ED3DA600A230CC /* StrokeWidth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrokeWidth.swift; sourceTree = "<group>"; };
@@ -59,16 +51,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		F83206E427ED2A6900A230CC /* ViewHelpers */ = {
-			isa = PBXGroup;
-			children = (
-				F83206E527ED2A9200A230CC /* AAPinType.swift */,
-				F83206E727ED2AAA00A230CC /* UIView+add.swift */,
-				F83206E927ED2AD400A230CC /* UIView+constraints.swift */,
-			);
-			path = ViewHelpers;
-			sourceTree = "<group>";
-		};
 		F8A0895627ECDE4600C22CB6 = {
 			isa = PBXGroup;
 			children = (
@@ -90,7 +72,6 @@
 			children = (
 				F8A0897827ECDE7D00C22CB6 /* MainDelegates */,
 				F8A0897927ECDEB500C22CB6 /* Model */,
-				F83206E427ED2A6900A230CC /* ViewHelpers */,
 				F8A0898427ECEC5C00C22CB6 /* Views */,
 				F8A0897A27ECDECA00C22CB6 /* ViewControllers */,
 				F8A0897627ECDE5C00C22CB6 /* Storyboards */,
@@ -151,7 +132,6 @@
 			isa = PBXGroup;
 			children = (
 				F83206DC27ED11F100A230CC /* ShapeCell.swift */,
-				F83206E227ED258000A230CC /* ShapeControlView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -235,11 +215,7 @@
 				F83206DD27ED11F100A230CC /* ShapeCell.swift in Sources */,
 				F8A0897C27ECDEE900C22CB6 /* Shape.swift in Sources */,
 				F8A0898227ECE43E00C22CB6 /* ShapesViewController.swift in Sources */,
-				F83206E827ED2AAA00A230CC /* UIView+add.swift in Sources */,
 				F83206EE27ED383A00A230CC /* Color.swift in Sources */,
-				F83206E327ED258000A230CC /* ShapeControlView.swift in Sources */,
-				F83206E627ED2A9200A230CC /* AAPinType.swift in Sources */,
-				F83206EA27ED2AD400A230CC /* UIView+constraints.swift in Sources */,
 				F8A0898027ECE09900C22CB6 /* ShapeController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -386,7 +362,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = 37H8X6K6NN;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Shapes/Resources/Info.plist;
@@ -414,7 +390,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = 37H8X6K6NN;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Shapes/Resources/Info.plist;
